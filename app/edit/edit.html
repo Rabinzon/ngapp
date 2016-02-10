@@ -1,26 +1,31 @@
-<h2 class="text-center">ДОБАВИТЬ КОНТАКТ</h2>
-
+<h2 class="text-center page-title">РЕДАКТИРОВАТЬ КОНТАКТ</h2>
 <div class="navigation">
-    <a href="#/list" class="btn btn-default"> Список</a>
+    <div class="row">
+        <div class="col-md-8 col-xs-8">
+            <a href="#/block" class="back-btn"></a>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <div class="text-right">
+            </div>
+        </div>
+    </div>
 </div>
 <section class="block" >
     <div class="row">
-
         <form ng-model="success" class="add__form clearfix" name="form" novalidate>
-            <div ng-show="form.$submitted">
-                <div ng-if="form.$valid && success"  class="alert alert-success" role="alert"> <strong>Новый контакт добавлен!</strong> </div>
+            <div ng-show="success">
+                <div ng-if="form.$valid && success  === true"  class="alert alert-success" role="alert"> <strong>Изменения сохранены.</strong> </div>
             </div>
-
+            <div ng-show="success === 1" class="alert alert-warning" role="alert"> <strong>Контакт удален.</strong> </div>
             <div class="col-md-6 col-xs-6 text-center">
                     <input id='file' class="file" type="file" >
-                    <img id="img" src="//placehold.it/1x1/" class="add__img" />
+                    <img id="img" src={{img}} class="add__img" />
                     <div>
-                        <button ng-disabled="form.$invalid"  type="submit" name="save-btn" ng-click="Submit()" class="btn btn-default save-btn">Сохранить</button>
-                        <button type="submit"  ng-click="ResetA()" class="btn btn-default remove-btn">Удалить</button>
+                        <button ng-disabled="form.$invalid"  type="submit" name="save-btn" ng-click="Update()" class="btn btn-default save-btn">Сохранить</button>
+                        <button type="submit"  ng-click="Kill()" class="btn btn-default remove-btn">Удалить</button>
                     </div>
             </div>
             <div class="col-md-6 col-xs-6">
-
                     <div class="form-group">
                         <label>Имя</label>
                         <div ng-show="form.$submitted || form.name.$touched">
@@ -56,10 +61,7 @@
                           <div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
                           <input  type="tel" ng-model="phone"  name="phone" class="form-control" ui-mask="(999) - 999 - 9999" model-view-value="true" required>
                         </div>
-
                     </div>
-
-
             </div>
         </form>
     </div>

@@ -1,0 +1,163 @@
+body{
+    background: url("img/bg.jpg") no-repeat;
+    background-size: cover;
+}
+.container{
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 50px;
+}
+.navigation{
+    margin-bottom: 15px;
+}
+.navigation .col-md-8.col-xs-8{
+    padding-left: 10px;
+}
+.navigation .col-md-4.col-xs-4{
+    padding-right: 10px;
+}
+.block{
+    background: rgb(243, 243, 243);;
+    width: 800px;
+    min-height: 380px;
+    margin: 0 auto;
+    padding: 15px;
+    padding-top: 25px;
+    border-radius: 5px;
+    margin-bottom: 120px;
+    position: relative;
+
+
+}
+.view__img{
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    border: 1px solid;
+    background: #eee;
+    border-color: #cccccc;
+    margin-bottom: 10px;
+
+}
+.col-md-3.col-lg-3.col-xs-3{
+    max-width: 140px;
+    margin-left: 9px;
+    margin-right: 9px;
+    padding: 0;
+    text-align: center;
+}
+.row{
+    margin: -10px;
+}
+.add__img{
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 210px;
+    height:210px;
+    margin-bottom: 15px;
+    background: #eee;
+
+}
+.file{
+    width: 210px;
+    height:210px;
+    position: absolute;
+    opacity: 0;
+    left: 100px;
+}
+.save-btn{
+    float: left;
+    margin-left: 76px;
+}
+.remove-btn{
+    float: right;
+        margin-right: 77px;
+}
+.add__form{
+    padding-top: 45px;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+input.ng-invalid.ng-touched {
+    border-color: #FA787E;
+    outline-color: #FA787E;
+}
+
+input.ng-valid.ng-touched {
+    border-color: #cccccc;
+}
+.alert{
+    margin-top: -40px;
+}
+.tooltip.top{
+    margin-top: -36px;
+    margin-left: 115px;
+}
+.tooltip{
+    display: inline-block;
+    opacity: 1;
+}
+
+.list-btn{
+    width: 31px;
+    height: 23px;
+    display: inline-block;
+    margin-top: 5px;
+    background: url("img/list.png");
+}
+.list-btn.active{
+    background: url("img/listh.png");
+}
+.list-btn:hover{
+    transition: 0.2s;
+    background: url("img/listh.png");
+}
+.block-btn{
+    display: inline-block;
+    margin-top: 5px;
+    width: 27px;
+    height: 27px;
+    margin-left: 10px;
+    background: url("img/block.png");
+}
+.block-btn.active{
+    background: url("img/blockh.png");
+}
+.block-btn:hover{
+    transition: 0.2s;
+    background: url("img/blockh.png");
+}
+.page-title{
+    margin-bottom: 20px;
+}
+.back-btn{
+    width: 26px;
+    height: 26px;
+    margin-top: 5px;
+    display: inline-block;
+    transition: 0.2s;
+    background: url("img/back.png");
+}
+.back-btn:hover{
+    transition: 0.2s;
+    background: url("img/backh.png");
+}
+.btn{
+    border-radius: 5px;
+}
+.contact-block a{
+    color: #000000;
+}
+.contact-block a:hover{
+    text-decoration: none;
+}
+.contact-block p{
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+
+
+

@@ -1,0 +1,29 @@
+<h2 class="text-center page-title">КОНТАКТЫ</h2>
+<div class="navigation">
+    <div class="row">
+        <div class="col-md-8 col-xs-8">
+            <a href="#/add" class="btn btn-default"> Добавить</a>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <div class="text-right">
+                <a href="#/table" class="list-btn "> </a>
+                <a href="#/block" class="block-btn active"> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="block" >
+    <div class="row">
+        <div class="col-md-3 col-lg-3 col-xs-3 contact-block" ng-repeat="(key, value) in data">
+            <a ng-href='#/edit:{{value.id}} '>
+                <img class="view__img" src={{value.img}} width="75px" height="75px">
+                <div class="text-center">
+                    <p dotdotdot>{{value.name}} {{value.lastname}}</p>
+                    <p dotdotdot>+7 {{value.phone}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+

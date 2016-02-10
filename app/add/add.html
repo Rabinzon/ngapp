@@ -1,7 +1,15 @@
-<h2 class="text-center">ДОБАВИТЬ КОНТАКТ</h2>
+<h2 class="text-center page-title">ДОБАВИТЬ КОНТАКТ</h2>
 
 <div class="navigation">
-    <a href="#/list" class="btn btn-default"> Список</a>
+    <div class="row">
+        <div class="col-md-8 col-xs-8">
+            <a href="#/block" class="back-btn"></a>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <div class="text-right">
+            </div>
+        </div>
+    </div>
 </div>
 <section class="block" >
     <div class="row">
@@ -15,7 +23,7 @@
                     <img id="img" src="//placehold.it/1x1/" class="add__img" />
                     <div>
                         <button ng-disabled="form.$invalid"  type="submit" name="save-btn" ng-click="Submit()" class="btn btn-default save-btn">Сохранить</button>
-                        <button type="submit"  ng-click="ResetA()" class="btn btn-default remove-btn">Удалить</button>
+                        <button type="submit"  ng-click="ResetA()" class="btn btn-default remove-btn">Очистить</button>
                     </div>
             </div>
             <div class="col-md-6 col-xs-6">

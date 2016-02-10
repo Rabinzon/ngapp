@@ -4,14 +4,13 @@ angular.module('App.add', ['ngRoute', 'firebase', 'ui.mask'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/add', {
-        templateUrl: 'add/add.html',
+        templateUrl: 'app/add/add.html',
         controller: 'addCtrl'
     });
 
 }])
+.controller('addCtrl', function($scope, $timeout, FIREBASE_URL) {
 
-.controller('addCtrl', function($scope, $timeout) {
-    var ref = new Firebase('https://meangularapp.firebaseio.com');
     var img64 = '//placehold.it/1x1/';
 
     function el(id) {return document.getElementById(id);}
@@ -23,11 +22,9 @@ angular.module('App.add', ['ngRoute', 'firebase', 'ui.mask'])
                 el('img').src = e.target.result;
                 img64 = e.target.result;
             };
-
             FR.readAsDataURL(this.files[0]);
         }
     }
-    $scope.checked = null;
     el('file').addEventListener('change', readImage, false);
     $scope.ResetA = function() {
         document.querySelectorAll('.add__form')[0].reset();
@@ -37,25 +34,29 @@ angular.module('App.add', ['ngRoute', 'firebase', 'ui.mask'])
         $scope.phone = '';
         $scope.email = '';
     };
-
-    console.log('notbasd')
-    ref.update({
-        '-KA05X8g0-pmRZ518eZj/name': 'goodman'
-    })
     $scope.Submit  = function() {
-        if ($scope.form.$valid) {
-            console.log('ok it');
-        }
+        var newIdd = 0;
         if ($scope.name != undefined & $scope.lastname != undefined &
             $scope.lastname != undefined & $scope.email != undefined) {
-            ref.push({
-                'name': $scope.name,
-                'lastname': $scope.lastname,
-                'phone': '+7' + $scope.phone,
-                'email': $scope.email,
-                'img': img64
+            FIREBASE_URL.COUNTER.once('value', function(snapshot) {
+                console.log(snapshot.val());
+                newIdd = snapshot.val() + 1;
+                FIREBASE_URL.CONTACTS.child(newIdd).set({
+                        'name': $scope.name,
+                        'lastname': $scope.lastname,
+                        'phone': $scope.phone,
+                        'mail': $scope.email,
+                        'img': img64,
+                        'id': newIdd
+                    }
+                );
+                FIREBASE_URL.update({'counter': newIdd});
+            }, function(errorObject) {
+                console.log('The read failed: ' + errorObject.code);
             });
+
             $scope.success = true;
+            document.querySelectorAll('save-btn').disabled = true;
             $timeout(function() {
                 $scope.success = false;
                 $scope.ResetA();

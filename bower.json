@@ -1,6 +1,6 @@
 {
   "name": "ngapp",
-  "description": "",
+  "description": "training project on Angular.js",
   "main": "",
   "moduleType": [],
   "license": "MIT",
@@ -17,6 +17,7 @@
     "angular-route": "^1.5.0",
     "bootstrap": "^3.3.6",
     "firebase": "^2.4.0",
-    "angularfire": "^1.1.3"
+    "angularfire": "^1.1.3",
+    "angular-ui-mask": "^1.7.2"
   }
 }
